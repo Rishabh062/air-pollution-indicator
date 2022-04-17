@@ -31,7 +31,6 @@ const onPositionGathered = (position) =>{
 const getAirQuality = async(lat,lon) =>{
     const rawData = await fetch(`${link}?lat=${lat}&lon=${lon}&appid=${appId}`).catch(e =>{onPositionGatherError(e)})
     const airData = await rawData.json();
-    console.log(airData);
     setValueOfAir(airData);
     setComponentOfAir(airData);
 }
